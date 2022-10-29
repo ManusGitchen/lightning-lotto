@@ -1,19 +1,18 @@
 <template>
   <div class="welcome">
     <v-card>
-      <!-- src="https://picsum.photos/920" -->
       <v-img
-        v-bind:src="require('../assets/lightning-banner.jpg')"
-        max-height="400px"
+        v-bind:src="img"
+        :max-height="maxHeight"
         cover
         class="bg-grey-lighten-2"
       />
       <div  class="banner-text">
         <v-card-title class="banner-text--headline">
-          Lightning-Lotto        
+          {{title}}        
         </v-card-title>
         <v-card-title class="banner-text--subheadline">
-          ...weil es wahrscheinlicher ist vom Blitz getroffen zu werden, als im Lotto zu gewinnen...
+          {{teaser}}
         </v-card-title>
       </div>
     </v-card>
@@ -24,9 +23,25 @@
 import { defineComponent } from 'vue';
 
 export default defineComponent({
-  name: 'HelloWorld',
+  name: 'Banner',
   props: {
-    msg: String,
+    title: {
+      type: String,
+      default:'',
+      requiered: true
+    },
+    teaser: {
+      type: String,
+      default: ''
+    },
+    img: {
+      type: String,
+      default: ''
+    },
+    maxHeight: {
+      type: String,
+      default: ''
+    }
   },
 });
 </script>
@@ -57,6 +72,7 @@ export default defineComponent({
     line-height: 3rem !important;
     white-space: initial;
     font-size: 2rem;
+    text-align: center;
     @media screen and (max-width: 600px) {
       display: none;
     }

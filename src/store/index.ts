@@ -3,23 +3,29 @@ import { createStore } from 'vuex'
 
 export default createStore({
   state: {
-    draws:[]
+    draws:[],
+    error: ''
   },
   getters: {
-
     getDraws: (state) => {
       return state.draws
+    },
+    getBackendError: (state) => {
+      return state.error
     }
   },
   mutations: {
     setGameData(state, draws) {
       state.draws = draws
+    },
+    setBackendError(state, error) {
+
     }
   },
   actions: {
-    gameData({state, commit},selected): any {
+    gameData({commit},selected): any {
       axios ({
-        url:' http://localhost:8010/proxy/graphql',
+        url:'https://www.lottohelden.de/graphql',
         method:'post',
         data: {
           query:`
@@ -28,29 +34,11 @@ export default createStore({
             draws {
               additionalNumbers
               date
-              gameAmount
-              jackpot
-              megaPlier
               numbers
-              odds {
-                link
-                numberOfWinners
-                numbers
-                odd
-                winningClass
-                withOptions
-              }
-              powerPlay
               seo {
                 description
-                texts {
-                  content
-                  headline
-                }
                 title
               }
-              shares
-              time
             }
             success
             visibleErrors {
@@ -64,7 +52,8 @@ export default createStore({
       }).then(res =>{
         let draws = res.data.data.draw
         commit('setGameData',draws)
-        console.log(res.data.data.draw)})
-    }
+        commit('setBackendError',draws.backendError)
+      })
+    },
   },
 })

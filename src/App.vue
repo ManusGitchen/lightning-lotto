@@ -1,7 +1,5 @@
 <template>
-  <header>
-    <Header/>
-  </header>
+  <header></header>
   <main>
     <router-view/>
   </main>
@@ -10,12 +8,8 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import Header from '@/components/Header.vue'; 
 
 export default defineComponent({
-  name: 'HomeView',
-  components: {
-    Header,
-  },
+  name: 'HomeView'
 });
 </script>
