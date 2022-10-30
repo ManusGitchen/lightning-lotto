@@ -1,7 +1,6 @@
 <template>
   <v-card
     class="mx-auto"
-    max-width="344"
   >
     <v-img
       src="https://images.pexels.com/photos/5550130/pexels-photo-5550130.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
@@ -17,6 +16,7 @@
 
 <script lang="ts">
 export default ({
+  name:'TeaserCard',
   props: {
     title: {
       type: String,
@@ -26,7 +26,7 @@ export default ({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .result-card {
   margin-bottom: 1rem;
 }

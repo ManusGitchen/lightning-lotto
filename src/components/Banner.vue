@@ -1,22 +1,20 @@
 <template>
-  <div class="welcome">
-    <v-card>
-      <v-img
-        v-bind:src="img"
-        :max-height="maxHeight"
-        cover
-        class="bg-grey-lighten-2"
-      />
-      <div  class="banner-text">
-        <v-card-title class="banner-text--headline">
-          {{title}}        
-        </v-card-title>
-        <v-card-title class="banner-text--subheadline">
-          {{teaser}}
-        </v-card-title>
-      </div>
-    </v-card>
-  </div>
+  <v-card>
+    <v-img
+      v-bind:src="img"
+      :max-height="maxHeight"
+      cover
+      class="bg-grey-lighten-2"
+    />
+    <div  class="banner-text">
+      <v-card-title class="banner-text--headline">
+        {{title}}        
+      </v-card-title>
+      <v-card-title class="banner-text--subheadline">
+        {{teaser}}
+      </v-card-title>
+    </div>
+  </v-card>
 </template>
 
 <script lang="ts">
@@ -27,8 +25,7 @@ export default defineComponent({
   props: {
     title: {
       type: String,
-      default:'',
-      requiered: true
+      default:''
     },
     teaser: {
       type: String,
