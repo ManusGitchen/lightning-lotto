@@ -17,6 +17,10 @@ export default ({
     ResultCard
   },
   computed: {
+    /**
+     * Get fetched data from local store.
+     * use it for the component ResultCard
+     */
     displayDraws() {
       return (this as any).$store.getters.getDraws
     }

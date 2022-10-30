@@ -24,6 +24,7 @@
 
 <script lang="ts">
 export default ({
+  name:'ResultCard',
   props: {
     overline: {
       type: String,
@@ -49,7 +50,7 @@ export default ({
 })
 </script>
 
-<style lang="scss">
+<style scoped lang="scss">
 .result-card {
   margin-bottom: 1rem;
 }
