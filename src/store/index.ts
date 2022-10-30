@@ -50,6 +50,9 @@ export default createStore({
      */
     gameData({commit},selected): any {
       axios ({
+        //use proxy for CORS policy (https://github.com/garmeeh/local-cors-proxy) and switch the comments from URL
+
+        //url:'http://http://localhost:8010/proxy/graphql
         url:'https://www.lottohelden.de/graphql',
         method:'post',
         data: {
