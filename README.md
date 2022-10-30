@@ -20,5 +20,12 @@ npm run build
 npm run test:unit
 ```
 
+### Used CORS Plugin
+```
+Chrome Plugin: Allow CORS: Access-Control-Allow-Origin
+
+https://chrome.google.com/webstore/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf?hl=en
+```
+
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
